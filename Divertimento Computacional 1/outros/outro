@@ -1,0 +1,12 @@
+
+OS := $(shell uname -s)
+all:
+	ifeq ("$(OS)", "Darwin")
+		g++ tc1.cpp -o trabalhocg -lGL -lGLU -lglut tinyxml/tinyxml.cpp tinyxml/tinystr.cpp tinyxml/tinyxmlerror.cpp tinyxml/tinyxmlparser.cppT
+	else
+		g++ tc1.cpp -o trabalhocg -lGL -lGLU -lglut tinyxml/tinyxml.cpp tinyxml/tinystr.cpp tinyxml/tinyxmlerror.cpp tinyxml/tinyxmlparser.cpp
+	endif
+clean:
+	rm -rf trabalhocg
+run:
+	./trabalhocg
